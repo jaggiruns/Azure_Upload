@@ -37,3 +37,13 @@ def index():
         </body>
         </html>
         """
+if __name__ == '__main__':
+    HOST = os.environ.get('SERVER_HOST', 'localhost')
+    try:
+        PORT = int(os.environ.get('SERVER_PORT', '5555'))
+    except ValueError:
+        PORT = 5555
+    regexArr1 = getRegexList1()
+    regexArr2 = getRegexList2()
+
+    app.run(HOST, PORT)
