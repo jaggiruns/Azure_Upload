@@ -5,6 +5,7 @@ from azure.storage.blob import ContentSettings
 block_blob_service = BlockBlobService(account_name='ticketclassification2386', account_key='Q+lCNbXlp7J2aH/lSTE2w8OeEtArk2L226OjSkVKHzBxRgf5JUi74Fr3TfY9AcsOijP+H23aH74Sn0tVaddnIg==')
 #block_blob_service.create_container('mycontainer')
 
+app = Flask(__name__)
 #Upload the CSV file to Azure cloud
 def create_file():
     block_blob_service.create_blob_from_path(
@@ -43,7 +44,5 @@ if __name__ == '__main__':
         PORT = int(os.environ.get('SERVER_PORT', '5555'))
     except ValueError:
         PORT = 5555
-    regexArr1 = getRegexList1()
-    regexArr2 = getRegexList2()
 
     app.run(HOST, PORT)
