@@ -1,4 +1,5 @@
 
+from flask import Flask
 from azure.storage.blob import BlockBlobService
 from azure.storage.blob import ContentSettings
 
